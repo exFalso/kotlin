@@ -17,6 +17,7 @@
 package org.jetbrains.kotlin.idea.intentions
 
 import com.intellij.codeInsight.intention.LowPriorityAction
+import com.intellij.openapi.application.ApplicationManager
 import com.intellij.openapi.editor.Editor
 import com.intellij.psi.PsiDocumentManager
 import com.intellij.refactoring.rename.inplace.VariableInplaceRenameHandler
@@ -49,6 +50,8 @@ class ReplaceItWithExplicitFunctionLiteralParamIntention() : SelfTargetingOffset
 
         val paramToRename = functionLiteral.valueParameters.single()
         editor.caretModel.moveToOffset(element.textOffset)
-        VariableInplaceRenameHandler().doRename(paramToRename, editor, null)
+        if (!ApplicationManager.getApplication().isUnitTestMode) {
+            VariableInplaceRenameHandler().doRename(paramToRename, editor, null)
+        }
     }
 }
