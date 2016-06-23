@@ -443,6 +443,18 @@ public class IncrementalJpsTestGenerated extends AbstractIncrementalJpsTest {
             doTest(fileName);
         }
 
+        @TestMetadata("inlineClassValProperty")
+        public void testInlineClassValProperty() throws Exception {
+            String fileName = KotlinTestUtils.navigationMetadata("jps-plugin/testData/incremental/pureKotlin/inlineClassValProperty/");
+            doTest(fileName);
+        }
+
+        @TestMetadata("inlineClassVarProperty")
+        public void testInlineClassVarProperty() throws Exception {
+            String fileName = KotlinTestUtils.navigationMetadata("jps-plugin/testData/incremental/pureKotlin/inlineClassVarProperty/");
+            doTest(fileName);
+        }
+
         @TestMetadata("inlineFunctionRemoved")
         public void testInlineFunctionRemoved() throws Exception {
             String fileName = KotlinTestUtils.navigationMetadata("jps-plugin/testData/incremental/pureKotlin/inlineFunctionRemoved/");
@@ -476,6 +488,18 @@ public class IncrementalJpsTestGenerated extends AbstractIncrementalJpsTest {
         @TestMetadata("inlinePrivateFunctionAdded")
         public void testInlinePrivateFunctionAdded() throws Exception {
             String fileName = KotlinTestUtils.navigationMetadata("jps-plugin/testData/incremental/pureKotlin/inlinePrivateFunctionAdded/");
+            doTest(fileName);
+        }
+
+        @TestMetadata("inlineTopLevelValProperty")
+        public void testInlineTopLevelValProperty() throws Exception {
+            String fileName = KotlinTestUtils.navigationMetadata("jps-plugin/testData/incremental/pureKotlin/inlineTopLevelValProperty/");
+            doTest(fileName);
+        }
+
+        @TestMetadata("inlineTopLevelVarProperty")
+        public void testInlineTopLevelVarProperty() throws Exception {
+            String fileName = KotlinTestUtils.navigationMetadata("jps-plugin/testData/incremental/pureKotlin/inlineTopLevelVarProperty/");
             doTest(fileName);
         }
 
