@@ -17,10 +17,10 @@ public final class JsProtoBuf {
     registry.add(org.jetbrains.kotlin.serialization.js.JsProtoBuf.typeAnnotation);
     registry.add(org.jetbrains.kotlin.serialization.js.JsProtoBuf.typeParameterAnnotation);
   }
-  public interface ClassesOrBuilder
-      extends org.jetbrains.kotlin.protobuf.MessageLiteOrBuilder {
+  public interface ClassesOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:org.jetbrains.kotlin.serialization.js.Classes)
+      org.jetbrains.kotlin.protobuf.MessageLiteOrBuilder {
 
-    // repeated int32 class_name = 1 [packed = true];
     /**
      * <code>repeated int32 class_name = 1 [packed = true];</code>
      *
@@ -50,14 +50,15 @@ public final class JsProtoBuf {
    * Protobuf type {@code org.jetbrains.kotlin.serialization.js.Classes}
    */
   public static final class Classes extends
-      org.jetbrains.kotlin.protobuf.GeneratedMessageLite
-      implements ClassesOrBuilder {
+      org.jetbrains.kotlin.protobuf.GeneratedMessageLite implements
+      // @@protoc_insertion_point(message_implements:org.jetbrains.kotlin.serialization.js.Classes)
+      ClassesOrBuilder {
     // Use Classes.newBuilder() to construct.
     private Classes(org.jetbrains.kotlin.protobuf.GeneratedMessageLite.Builder builder) {
       super(builder);
-
+      this.unknownFields = builder.getUnknownFields();
     }
-    private Classes(boolean noInit) {}
+    private Classes(boolean noInit) { this.unknownFields = org.jetbrains.kotlin.protobuf.ByteString.EMPTY;}
 
     private static final Classes defaultInstance;
     public static Classes getDefaultInstance() {
@@ -68,12 +69,18 @@ public final class JsProtoBuf {
       return defaultInstance;
     }
 
+    private final org.jetbrains.kotlin.protobuf.ByteString unknownFields;
     private Classes(
         org.jetbrains.kotlin.protobuf.CodedInputStream input,
         org.jetbrains.kotlin.protobuf.ExtensionRegistryLite extensionRegistry)
         throws org.jetbrains.kotlin.protobuf.InvalidProtocolBufferException {
       initFields();
       int mutable_bitField0_ = 0;
+      org.jetbrains.kotlin.protobuf.ByteString.Output unknownFieldsOutput =
+          org.jetbrains.kotlin.protobuf.ByteString.newOutput();
+      org.jetbrains.kotlin.protobuf.CodedOutputStream unknownFieldsCodedOutput =
+          org.jetbrains.kotlin.protobuf.CodedOutputStream.newInstance(
+              unknownFieldsOutput);
       try {
         boolean done = false;
         while (!done) {
@@ -83,7 +90,7 @@ public final class JsProtoBuf {
               done = true;
               break;
             default: {
-              if (!parseUnknownField(input,
+              if (!parseUnknownField(input, unknownFieldsCodedOutput,
                                      extensionRegistry, tag)) {
                 done = true;
               }
@@ -121,6 +128,13 @@ public final class JsProtoBuf {
         if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
           className_ = java.util.Collections.unmodifiableList(className_);
         }
+        try {
+          unknownFieldsCodedOutput.flush();
+        } catch (java.io.IOException e) {
+        // Should not happen
+        } finally {
+          unknownFields = unknownFieldsOutput.toByteString();
+        }
         makeExtensionsImmutable();
       }
     }
@@ -139,7 +153,6 @@ public final class JsProtoBuf {
       return PARSER;
     }
 
-    // repeated int32 class_name = 1 [packed = true];
     public static final int CLASS_NAME_FIELD_NUMBER = 1;
     private java.util.List<java.lang.Integer> className_;
     /**
@@ -181,7 +194,8 @@ public final class JsProtoBuf {
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
       memoizedIsInitialized = 1;
       return true;
@@ -197,6 +211,7 @@ public final class JsProtoBuf {
       for (int i = 0; i < className_.size(); i++) {
         output.writeInt32NoTag(className_.get(i));
       }
+      output.writeRawBytes(unknownFields);
     }
 
     private int memoizedSerializedSize = -1;
@@ -219,6 +234,7 @@ public final class JsProtoBuf {
         }
         classNameMemoizedSerializedSize = dataSize;
       }
+      size += unknownFields.size();
       memoizedSerializedSize = size;
       return size;
     }
@@ -296,7 +312,9 @@ public final class JsProtoBuf {
     public static final class Builder extends
         org.jetbrains.kotlin.protobuf.GeneratedMessageLite.Builder<
           org.jetbrains.kotlin.serialization.js.JsProtoBuf.Classes, Builder>
-        implements org.jetbrains.kotlin.serialization.js.JsProtoBuf.ClassesOrBuilder {
+        implements
+        // @@protoc_insertion_point(builder_implements:org.jetbrains.kotlin.serialization.js.Classes)
+        org.jetbrains.kotlin.serialization.js.JsProtoBuf.ClassesOrBuilder {
       // Construct using org.jetbrains.kotlin.serialization.js.JsProtoBuf.Classes.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
@@ -354,6 +372,8 @@ public final class JsProtoBuf {
           }
           
         }
+        setUnknownFields(
+            getUnknownFields().concat(other.unknownFields));
         return this;
       }
 
@@ -380,7 +400,6 @@ public final class JsProtoBuf {
       }
       private int bitField0_;
 
-      // repeated int32 class_name = 1 [packed = true];
       private java.util.List<java.lang.Integer> className_ = java.util.Collections.emptyList();
       private void ensureClassNameIsMutable() {
         if (!((bitField0_ & 0x00000001) == 0x00000001)) {
@@ -456,7 +475,8 @@ public final class JsProtoBuf {
       public Builder addAllClassName(
           java.lang.Iterable<? extends java.lang.Integer> values) {
         ensureClassNameIsMutable();
-        super.addAll(values, className_);
+        org.jetbrains.kotlin.protobuf.AbstractMessageLite.Builder.addAll(
+            values, className_);
         
         return this;
       }
@@ -485,10 +505,10 @@ public final class JsProtoBuf {
     // @@protoc_insertion_point(class_scope:org.jetbrains.kotlin.serialization.js.Classes)
   }
 
-  public interface LibraryOrBuilder
-      extends org.jetbrains.kotlin.protobuf.MessageLiteOrBuilder {
+  public interface LibraryOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:org.jetbrains.kotlin.serialization.js.Library)
+      org.jetbrains.kotlin.protobuf.MessageLiteOrBuilder {
 
-    // repeated .org.jetbrains.kotlin.serialization.js.Library.FileEntry entry = 1;
     /**
      * <code>repeated .org.jetbrains.kotlin.serialization.js.Library.FileEntry entry = 1;</code>
      */
@@ -507,14 +527,15 @@ public final class JsProtoBuf {
    * Protobuf type {@code org.jetbrains.kotlin.serialization.js.Library}
    */
   public static final class Library extends
-      org.jetbrains.kotlin.protobuf.GeneratedMessageLite
-      implements LibraryOrBuilder {
+      org.jetbrains.kotlin.protobuf.GeneratedMessageLite implements
+      // @@protoc_insertion_point(message_implements:org.jetbrains.kotlin.serialization.js.Library)
+      LibraryOrBuilder {
     // Use Library.newBuilder() to construct.
     private Library(org.jetbrains.kotlin.protobuf.GeneratedMessageLite.Builder builder) {
       super(builder);
-
+      this.unknownFields = builder.getUnknownFields();
     }
-    private Library(boolean noInit) {}
+    private Library(boolean noInit) { this.unknownFields = org.jetbrains.kotlin.protobuf.ByteString.EMPTY;}
 
     private static final Library defaultInstance;
     public static Library getDefaultInstance() {
@@ -525,12 +546,18 @@ public final class JsProtoBuf {
       return defaultInstance;
     }
 
+    private final org.jetbrains.kotlin.protobuf.ByteString unknownFields;
     private Library(
         org.jetbrains.kotlin.protobuf.CodedInputStream input,
         org.jetbrains.kotlin.protobuf.ExtensionRegistryLite extensionRegistry)
         throws org.jetbrains.kotlin.protobuf.InvalidProtocolBufferException {
       initFields();
       int mutable_bitField0_ = 0;
+      org.jetbrains.kotlin.protobuf.ByteString.Output unknownFieldsOutput =
+          org.jetbrains.kotlin.protobuf.ByteString.newOutput();
+      org.jetbrains.kotlin.protobuf.CodedOutputStream unknownFieldsCodedOutput =
+          org.jetbrains.kotlin.protobuf.CodedOutputStream.newInstance(
+              unknownFieldsOutput);
       try {
         boolean done = false;
         while (!done) {
@@ -540,7 +567,7 @@ public final class JsProtoBuf {
               done = true;
               break;
             default: {
-              if (!parseUnknownField(input,
+              if (!parseUnknownField(input, unknownFieldsCodedOutput,
                                      extensionRegistry, tag)) {
                 done = true;
               }
@@ -565,6 +592,13 @@ public final class JsProtoBuf {
         if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
           entry_ = java.util.Collections.unmodifiableList(entry_);
         }
+        try {
+          unknownFieldsCodedOutput.flush();
+        } catch (java.io.IOException e) {
+        // Should not happen
+        } finally {
+          unknownFields = unknownFieldsOutput.toByteString();
+        }
         makeExtensionsImmutable();
       }
     }
@@ -583,10 +617,10 @@ public final class JsProtoBuf {
       return PARSER;
     }
 
-    public interface FileEntryOrBuilder
-        extends org.jetbrains.kotlin.protobuf.MessageLiteOrBuilder {
+    public interface FileEntryOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:org.jetbrains.kotlin.serialization.js.Library.FileEntry)
+        org.jetbrains.kotlin.protobuf.MessageLiteOrBuilder {
 
-      // required string path = 1;
       /**
        * <code>required string path = 1;</code>
        */
@@ -601,7 +635,6 @@ public final class JsProtoBuf {
       org.jetbrains.kotlin.protobuf.ByteString
           getPathBytes();
 
-      // required bytes content = 2;
       /**
        * <code>required bytes content = 2;</code>
        */
@@ -615,14 +648,15 @@ public final class JsProtoBuf {
      * Protobuf type {@code org.jetbrains.kotlin.serialization.js.Library.FileEntry}
      */
     public static final class FileEntry extends
-        org.jetbrains.kotlin.protobuf.GeneratedMessageLite
-        implements FileEntryOrBuilder {
+        org.jetbrains.kotlin.protobuf.GeneratedMessageLite implements
+        // @@protoc_insertion_point(message_implements:org.jetbrains.kotlin.serialization.js.Library.FileEntry)
+        FileEntryOrBuilder {
       // Use FileEntry.newBuilder() to construct.
       private FileEntry(org.jetbrains.kotlin.protobuf.GeneratedMessageLite.Builder builder) {
         super(builder);
-
+        this.unknownFields = builder.getUnknownFields();
       }
-      private FileEntry(boolean noInit) {}
+      private FileEntry(boolean noInit) { this.unknownFields = org.jetbrains.kotlin.protobuf.ByteString.EMPTY;}
 
       private static final FileEntry defaultInstance;
       public static FileEntry getDefaultInstance() {
@@ -633,12 +667,18 @@ public final class JsProtoBuf {
         return defaultInstance;
       }
 
+      private final org.jetbrains.kotlin.protobuf.ByteString unknownFields;
       private FileEntry(
           org.jetbrains.kotlin.protobuf.CodedInputStream input,
           org.jetbrains.kotlin.protobuf.ExtensionRegistryLite extensionRegistry)
           throws org.jetbrains.kotlin.protobuf.InvalidProtocolBufferException {
         initFields();
         int mutable_bitField0_ = 0;
+        org.jetbrains.kotlin.protobuf.ByteString.Output unknownFieldsOutput =
+            org.jetbrains.kotlin.protobuf.ByteString.newOutput();
+        org.jetbrains.kotlin.protobuf.CodedOutputStream unknownFieldsCodedOutput =
+            org.jetbrains.kotlin.protobuf.CodedOutputStream.newInstance(
+                unknownFieldsOutput);
         try {
           boolean done = false;
           while (!done) {
@@ -648,15 +688,16 @@ public final class JsProtoBuf {
                 done = true;
                 break;
               default: {
-                if (!parseUnknownField(input,
+                if (!parseUnknownField(input, unknownFieldsCodedOutput,
                                        extensionRegistry, tag)) {
                   done = true;
                 }
                 break;
               }
               case 10: {
+                org.jetbrains.kotlin.protobuf.ByteString bs = input.readBytes();
                 bitField0_ |= 0x00000001;
-                path_ = input.readBytes();
+                path_ = bs;
                 break;
               }
               case 18: {
@@ -672,6 +713,13 @@ public final class JsProtoBuf {
           throw new org.jetbrains.kotlin.protobuf.InvalidProtocolBufferException(
               e.getMessage()).setUnfinishedMessage(this);
         } finally {
+          try {
+            unknownFieldsCodedOutput.flush();
+          } catch (java.io.IOException e) {
+          // Should not happen
+          } finally {
+            unknownFields = unknownFieldsOutput.toByteString();
+          }
           makeExtensionsImmutable();
         }
       }
@@ -691,7 +739,6 @@ public final class JsProtoBuf {
       }
 
       private int bitField0_;
-      // required string path = 1;
       public static final int PATH_FIELD_NUMBER = 1;
       private java.lang.Object path_;
       /**
@@ -734,7 +781,6 @@ public final class JsProtoBuf {
         }
       }
 
-      // required bytes content = 2;
       public static final int CONTENT_FIELD_NUMBER = 2;
       private org.jetbrains.kotlin.protobuf.ByteString content_;
       /**
@@ -757,7 +803,8 @@ public final class JsProtoBuf {
       private byte memoizedIsInitialized = -1;
       public final boolean isInitialized() {
         byte isInitialized = memoizedIsInitialized;
-        if (isInitialized != -1) return isInitialized == 1;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
 
         if (!hasPath()) {
           memoizedIsInitialized = 0;
@@ -780,6 +827,7 @@ public final class JsProtoBuf {
         if (((bitField0_ & 0x00000002) == 0x00000002)) {
           output.writeBytes(2, content_);
         }
+        output.writeRawBytes(unknownFields);
       }
 
       private int memoizedSerializedSize = -1;
@@ -796,6 +844,7 @@ public final class JsProtoBuf {
           size += org.jetbrains.kotlin.protobuf.CodedOutputStream
             .computeBytesSize(2, content_);
         }
+        size += unknownFields.size();
         memoizedSerializedSize = size;
         return size;
       }
@@ -873,7 +922,9 @@ public final class JsProtoBuf {
       public static final class Builder extends
           org.jetbrains.kotlin.protobuf.GeneratedMessageLite.Builder<
             org.jetbrains.kotlin.serialization.js.JsProtoBuf.Library.FileEntry, Builder>
-          implements org.jetbrains.kotlin.serialization.js.JsProtoBuf.Library.FileEntryOrBuilder {
+          implements
+          // @@protoc_insertion_point(builder_implements:org.jetbrains.kotlin.serialization.js.Library.FileEntry)
+          org.jetbrains.kotlin.serialization.js.JsProtoBuf.Library.FileEntryOrBuilder {
         // Construct using org.jetbrains.kotlin.serialization.js.JsProtoBuf.Library.FileEntry.newBuilder()
         private Builder() {
           maybeForceBuilderInitialization();
@@ -936,6 +987,8 @@ public final class JsProtoBuf {
           if (other.hasContent()) {
             setContent(other.getContent());
           }
+          setUnknownFields(
+              getUnknownFields().concat(other.unknownFields));
           return this;
         }
 
@@ -970,7 +1023,6 @@ public final class JsProtoBuf {
         }
         private int bitField0_;
 
-        // required string path = 1;
         private java.lang.Object path_ = "";
         /**
          * <code>required string path = 1;</code>
@@ -984,9 +1036,12 @@ public final class JsProtoBuf {
         public java.lang.String getPath() {
           java.lang.Object ref = path_;
           if (!(ref instanceof java.lang.String)) {
-            java.lang.String s = ((org.jetbrains.kotlin.protobuf.ByteString) ref)
-                .toStringUtf8();
-            path_ = s;
+            org.jetbrains.kotlin.protobuf.ByteString bs =
+                (org.jetbrains.kotlin.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            if (bs.isValidUtf8()) {
+              path_ = s;
+            }
             return s;
           } else {
             return (java.lang.String) ref;
@@ -1044,7 +1099,6 @@ public final class JsProtoBuf {
           return this;
         }
 
-        // required bytes content = 2;
         private org.jetbrains.kotlin.protobuf.ByteString content_ = org.jetbrains.kotlin.protobuf.ByteString.EMPTY;
         /**
          * <code>required bytes content = 2;</code>
@@ -1091,7 +1145,6 @@ public final class JsProtoBuf {
       // @@protoc_insertion_point(class_scope:org.jetbrains.kotlin.serialization.js.Library.FileEntry)
     }
 
-    // repeated .org.jetbrains.kotlin.serialization.js.Library.FileEntry entry = 1;
     public static final int ENTRY_FIELD_NUMBER = 1;
     private java.util.List<org.jetbrains.kotlin.serialization.js.JsProtoBuf.Library.FileEntry> entry_;
     /**
@@ -1133,7 +1186,8 @@ public final class JsProtoBuf {
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
       for (int i = 0; i < getEntryCount(); i++) {
         if (!getEntry(i).isInitialized()) {
@@ -1151,6 +1205,7 @@ public final class JsProtoBuf {
       for (int i = 0; i < entry_.size(); i++) {
         output.writeMessage(1, entry_.get(i));
       }
+      output.writeRawBytes(unknownFields);
     }
 
     private int memoizedSerializedSize = -1;
@@ -1163,6 +1218,7 @@ public final class JsProtoBuf {
         size += org.jetbrains.kotlin.protobuf.CodedOutputStream
           .computeMessageSize(1, entry_.get(i));
       }
+      size += unknownFields.size();
       memoizedSerializedSize = size;
       return size;
     }
@@ -1240,7 +1296,9 @@ public final class JsProtoBuf {
     public static final class Builder extends
         org.jetbrains.kotlin.protobuf.GeneratedMessageLite.Builder<
           org.jetbrains.kotlin.serialization.js.JsProtoBuf.Library, Builder>
-        implements org.jetbrains.kotlin.serialization.js.JsProtoBuf.LibraryOrBuilder {
+        implements
+        // @@protoc_insertion_point(builder_implements:org.jetbrains.kotlin.serialization.js.Library)
+        org.jetbrains.kotlin.serialization.js.JsProtoBuf.LibraryOrBuilder {
       // Construct using org.jetbrains.kotlin.serialization.js.JsProtoBuf.Library.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
@@ -1298,6 +1356,8 @@ public final class JsProtoBuf {
           }
           
         }
+        setUnknownFields(
+            getUnknownFields().concat(other.unknownFields));
         return this;
       }
 
@@ -1330,7 +1390,6 @@ public final class JsProtoBuf {
       }
       private int bitField0_;
 
-      // repeated .org.jetbrains.kotlin.serialization.js.Library.FileEntry entry = 1;
       private java.util.List<org.jetbrains.kotlin.serialization.js.JsProtoBuf.Library.FileEntry> entry_ =
         java.util.Collections.emptyList();
       private void ensureEntryIsMutable() {
@@ -1432,7 +1491,8 @@ public final class JsProtoBuf {
       public Builder addAllEntry(
           java.lang.Iterable<? extends org.jetbrains.kotlin.serialization.js.JsProtoBuf.Library.FileEntry> values) {
         ensureEntryIsMutable();
-        super.addAll(values, entry_);
+        org.jetbrains.kotlin.protobuf.AbstractMessageLite.Builder.addAll(
+            values, entry_);
 
         return this;
       }
@@ -1480,7 +1540,8 @@ public final class JsProtoBuf {
         null,
         130,
         org.jetbrains.kotlin.protobuf.WireFormat.FieldType.MESSAGE,
-        false);
+        false,
+        org.jetbrains.kotlin.serialization.ProtoBuf.Annotation.class);
   public static final int CONSTRUCTOR_ANNOTATION_FIELD_NUMBER = 130;
   /**
    * <code>extend .org.jetbrains.kotlin.serialization.Constructor { ... }</code>
@@ -1495,7 +1556,8 @@ public final class JsProtoBuf {
         null,
         130,
         org.jetbrains.kotlin.protobuf.WireFormat.FieldType.MESSAGE,
-        false);
+        false,
+        org.jetbrains.kotlin.serialization.ProtoBuf.Annotation.class);
   public static final int FUNCTION_ANNOTATION_FIELD_NUMBER = 130;
   /**
    * <code>extend .org.jetbrains.kotlin.serialization.Function { ... }</code>
@@ -1510,7 +1572,8 @@ public final class JsProtoBuf {
         null,
         130,
         org.jetbrains.kotlin.protobuf.WireFormat.FieldType.MESSAGE,
-        false);
+        false,
+        org.jetbrains.kotlin.serialization.ProtoBuf.Annotation.class);
   public static final int PROPERTY_ANNOTATION_FIELD_NUMBER = 130;
   /**
    * <code>extend .org.jetbrains.kotlin.serialization.Property { ... }</code>
@@ -1525,7 +1588,8 @@ public final class JsProtoBuf {
         null,
         130,
         org.jetbrains.kotlin.protobuf.WireFormat.FieldType.MESSAGE,
-        false);
+        false,
+        org.jetbrains.kotlin.serialization.ProtoBuf.Annotation.class);
   public static final int COMPILE_TIME_VALUE_FIELD_NUMBER = 131;
   /**
    * <code>extend .org.jetbrains.kotlin.serialization.Property { ... }</code>
@@ -1540,7 +1604,8 @@ public final class JsProtoBuf {
         org.jetbrains.kotlin.serialization.ProtoBuf.Annotation.Argument.Value.getDefaultInstance(),
         null,
         131,
-        org.jetbrains.kotlin.protobuf.WireFormat.FieldType.MESSAGE);
+        org.jetbrains.kotlin.protobuf.WireFormat.FieldType.MESSAGE,
+        org.jetbrains.kotlin.serialization.ProtoBuf.Annotation.Argument.Value.class);
   public static final int ENUM_ENTRY_ANNOTATION_FIELD_NUMBER = 130;
   /**
    * <code>extend .org.jetbrains.kotlin.serialization.EnumEntry { ... }</code>
@@ -1555,7 +1620,8 @@ public final class JsProtoBuf {
         null,
         130,
         org.jetbrains.kotlin.protobuf.WireFormat.FieldType.MESSAGE,
-        false);
+        false,
+        org.jetbrains.kotlin.serialization.ProtoBuf.Annotation.class);
   public static final int PARAMETER_ANNOTATION_FIELD_NUMBER = 130;
   /**
    * <code>extend .org.jetbrains.kotlin.serialization.ValueParameter { ... }</code>
@@ -1570,7 +1636,8 @@ public final class JsProtoBuf {
         null,
         130,
         org.jetbrains.kotlin.protobuf.WireFormat.FieldType.MESSAGE,
-        false);
+        false,
+        org.jetbrains.kotlin.serialization.ProtoBuf.Annotation.class);
   public static final int TYPE_ANNOTATION_FIELD_NUMBER = 130;
   /**
    * <code>extend .org.jetbrains.kotlin.serialization.Type { ... }</code>
@@ -1585,7 +1652,8 @@ public final class JsProtoBuf {
         null,
         130,
         org.jetbrains.kotlin.protobuf.WireFormat.FieldType.MESSAGE,
-        false);
+        false,
+        org.jetbrains.kotlin.serialization.ProtoBuf.Annotation.class);
   public static final int TYPE_PARAMETER_ANNOTATION_FIELD_NUMBER = 130;
   /**
    * <code>extend .org.jetbrains.kotlin.serialization.TypeParameter { ... }</code>
@@ -1600,7 +1668,8 @@ public final class JsProtoBuf {
         null,
         130,
         org.jetbrains.kotlin.protobuf.WireFormat.FieldType.MESSAGE,
-        false);
+        false,
+        org.jetbrains.kotlin.serialization.ProtoBuf.Annotation.class);
 
   static {
   }
